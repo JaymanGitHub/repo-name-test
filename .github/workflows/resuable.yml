@@ -1,0 +1,19 @@
+name: reusable
+
+on:
+  workflow_call:
+    inputs:
+      publish_artifacts:
+        required: true
+        type: string
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  reuse:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout code from repo
+      - name: cmd
+        run: echo hahahaha
