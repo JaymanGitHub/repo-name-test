@@ -34,6 +34,10 @@ env:
   Azure1: ${{ github.event.inputs.choice }}
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  reusetest:
+    uses: JaymanGitHub/playground-public/.github/workflows/reusable.yml@main
+    with: 
+      publish_artifacts: 'yes'
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
@@ -45,12 +49,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      
-      - uses: JaymanGitHub/playground-public/.github/workflows/reusable.yml@main
-        with: 
-          publish_artifacts: 'yes'
-          
-         
+                 
       - name: Azure Login
         uses: Azure/login@v1
         with:
