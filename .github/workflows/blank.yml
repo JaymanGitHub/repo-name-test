@@ -35,7 +35,7 @@ env:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   reusetest:
-    uses: JaymanGitHub/playground-public/.github/workflows/reusable.yml@main
+    uses: JaymanGitHub/playground-public/.github/workflows/resuable.yml@main
     with: 
       publish_artifacts: 'yes'
   # This workflow contains a single job called "build"
