@@ -20,7 +20,7 @@ jobs:
           echo ${{ github.event.inputs.publishArtifacts }}
           echo ${{ inputs.publishArtifacts }}
       - name: cmd2
-        if: ${{ github.event.inputs.publish_artifacts && github.event.inputs.publish_artifacts == 'y' }}
+        if: ${{ inputs.publishArtifacts && inputs.publishArtifacts == 'yes' }}
         run: |
           echo hahahaha
           echo ${{ github.event.inputs.publish_artifacts }}
