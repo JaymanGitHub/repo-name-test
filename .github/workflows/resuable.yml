@@ -16,7 +16,10 @@ jobs:
     steps:
       # Checkout code from repo
       - name: cmd
-        #if: ${{ github.event.inputs.publish_artifacts == 'yes' }}
+        run: |
+          echo ${{ github.event.inputs.publish_artifacts }}
+      - name: cmd2
+        if: ${{ github.event.inputs.publish_artifacts && github.event.inputs.publish_artifacts == 'y' }}
         run: |
           echo hahahaha
           echo ${{ github.event.inputs.publish_artifacts }}
