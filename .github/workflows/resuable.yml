@@ -3,7 +3,7 @@ name: reusable
 on:
   workflow_call:
     inputs:
-      publish_artifacts:
+      publishArtifacts:
         required: true
         type: string
   pull_request:
@@ -17,7 +17,8 @@ jobs:
       # Checkout code from repo
       - name: cmd
         run: |
-          echo ${{ github.event.inputs.publish_artifacts }}
+          echo ${{ github.event.inputs.publishArtifacts }}
+          echo ${{ inputs.publishArtifacts }}
       - name: cmd2
         if: ${{ github.event.inputs.publish_artifacts && github.event.inputs.publish_artifacts == 'y' }}
         run: |
