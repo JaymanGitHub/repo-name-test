@@ -37,7 +37,7 @@ jobs:
   reusetest:
     uses: JaymanGitHub/playground-public/.github/workflows/resuable.yml@main
     with: 
-      publishArtifacts: y
+      publishArtifacts: 'yes'
       
   # This workflow contains a single job called "build"
   build:
