@@ -1,0 +1,26 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "networkSecurityGroupName": {
+            "value": "nsg-sn-auea-nprd-prv-platform-dnsfwd-01"
+        },
+        "networkSecurityGroupSecurityRulesInbound": {
+            "value": [
+                {
+                    "name":"INBOUND-FROM-any-TO-any-PORT-any-PROT-any-DENY",
+                    "properties":{
+                        "protocol": "*",
+                        "sourcePortRange": "*",
+                        "destinationPortRange": "*",
+                        "sourceAddressPrefix": "*",
+                        "destinationAddressPrefix": "*",
+                        "access": "Deny",
+                        "priority": 4000,
+                        "direction": "Inbound"
+                    }
+                }
+            ]
+        }
+    }
+}
