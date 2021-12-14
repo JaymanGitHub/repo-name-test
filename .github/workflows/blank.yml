@@ -60,7 +60,7 @@ jobs:
           
   Test:
     needs: build
-    if: ${{ success() && GITHUB_REF_NAME == 'main' }}
+    if: ${{ success() && env.GITHUB_REF_NAME == 'main' }}
     runs-on: ubuntu-latest
     environment: Dev
     env:
