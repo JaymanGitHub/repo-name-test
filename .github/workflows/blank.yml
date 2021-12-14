@@ -8,18 +8,15 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
-      environment:
-        type: environment
-        description: Select the environment
       boolean:
         type: boolean
         description: True or False
-      choice:
+      deploymentType:
         type: choice
         description: Make a choice
         options:
-          - foo
-          - bar
+          - nsg
+          - all
       choice1:
         type: choice
         description: Make another choice
@@ -30,8 +27,6 @@ on:
 env:
   agentWin: windows-latest
   TES: TEST
-  Azure: "secrets.${{ github.event.inputs.choice1 }}"
-  Azure1: ${{ github.event.inputs.choice }}
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   reusetest:
@@ -43,7 +38,6 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: windows-latest
-    environment: Dev
     needs: reusetest
     
 
@@ -51,15 +45,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-               
-      - name: Azure Login
-        uses: Azure/login@v1
-        with:
-          # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
-          creds: ${{ secrets.AZURE_SP }}
-          allow-no-subscriptions: true
-          enable-AzPSSession: true
-         
+                   
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.2.4
         with:
@@ -74,8 +60,9 @@ jobs:
           
   Test:
     needs: build
-    if: success()
+    if: ${{ success() && GITHUB_REF_NAME == 'main' }}
     runs-on: ubuntu-latest
+    environment: Dev
     env:
       path: './Modules/test.ps1'
       para: 'haha'
@@ -85,13 +72,25 @@ jobs:
         with:
           name: jayartifact
           
-
-      - name: Azure PowerShell Action
+      - name: Azure Login
+        uses: Azure/login@v1
+        with:
+          # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
+          creds: ${{ secrets.AZURE_SP }}
+          allow-no-subscriptions: true
+          enable-AzPSSession: true
+          
+      - name: Deploy nsgs
         uses: Azure/powershell@v1
         with:
           # Specify the Az PowerShell script here.
           inlineScript: |
-            ${{ env.path }} `
-            -Parameter1 ${{ env.para }}
+            ./Scripts/New-DeploymentV2.ps1 `   
+              -templateFile ./Modules/Network/nsg.deploy.json `
+              -templateParametersFile "./Configuration/platform/nprd-prv/nsg/nsg1.parameters.json","./Configuration/platform/nprd-prv/nsg/nsg2.parameters.json" `
+              -resourceGroupName jay-test-rg `
+              -subscriptionId ${{ secrets.AZURE_SUBID }} `
+              -buildInfo "${{ GITHUB_SHA }} ${{ GITHUB_REF_NAME }}"
+
           azPSVersion: latest
           
