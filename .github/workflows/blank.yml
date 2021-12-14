@@ -60,7 +60,7 @@ jobs:
           
   Test:
     needs: build
-    if: ${{ success() && env.GITHUB_REF_NAME == 'main' }}
+    if: ${{ success() && github.REF_NAME == 'main' }}
     runs-on: ubuntu-latest
     environment: Dev
     env:
@@ -90,7 +90,7 @@ jobs:
               -templateParametersFile "./Configuration/platform/nprd-prv/nsg/nsg1.parameters.json","./Configuration/platform/nprd-prv/nsg/nsg2.parameters.json" `
               -resourceGroupName jay-test-rg `
               -subscriptionId ${{ secrets.AZURE_SUBID }} `
-              -buildInfo "${{ GITHUB_SHA }} ${{ env.GITHUB_REF_NAME }}"
+              -buildInfo "${{ github.SHA }} ${{ github.REF_NAME }}"
 
           azPSVersion: latest
           
