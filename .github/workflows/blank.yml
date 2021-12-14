@@ -55,7 +55,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
-          echo ${{ github.event.inputs.choice }}
+          echo ${{ github.event.inputs.deploymentType }}
           echo ${{ github.event.inputs.choice1 }}
           
   Test:
