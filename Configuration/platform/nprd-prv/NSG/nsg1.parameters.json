@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "networkSecurityGroupName": {
-            "value": "nsg-sn-auea-nprd-prv-platform-dnsfwd-01"
+            "value": "nsg-mytestnsg1"
         },
         "networkSecurityGroupSecurityRulesInbound": {
             "value": [
