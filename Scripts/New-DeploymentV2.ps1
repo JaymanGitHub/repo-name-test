@@ -52,7 +52,7 @@ Write-Host "Deploying Resource ==> '$($resourceType)' `n --- `n Module to Proces
 
 $buildCommitId = $buildInfo.Split(" ")[0].Substring(0, 7)
 $buildBranchName = $buildInfo.Split(" ")[1]
-
+write-host "$buildInfo"
 $Tags = @{"buildInfo" = "$($buildCommitId)_$($buildBranchName)"; "Tier" = "1" } 
 
 
