@@ -55,7 +55,7 @@ jobs:
   Test:
     needs: build
     if: ${{ success() && github.REF_NAME == 'main' }}
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     environment: Dev
     env:
       path: './Modules/test.ps1'
