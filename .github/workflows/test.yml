@@ -1,1 +1,4 @@
 
+name: mytestworkflow
+
+on: pull_request
