@@ -106,9 +106,9 @@ foreach ($file in $templateParametersFile) {
                 }
                 
                 if ($subscriptionId) {
-                    Write-Host "`n Attempting Deployment using Input from Pipeline!!!!!!!!!!!!!!!!!!!!!!!!!!! `n" 
-                    #Set-AzContext -SubscriptionId $subscriptionId | out-null
-                    #New-AzDeployment @CommonDeployParameters -Location $location  
+                    Write-Host "`n Attempting Deployment using Input from Pipeline `n" 
+                    Set-AzContext -SubscriptionId $subscriptionId | out-null
+                    New-AzDeployment @CommonDeployParameters -Location $location  
                 }
                 elseif ($subscriptionId_File) {
                     Write-Host "`n Attempting Deployment using Input from Parameter File`n" 
@@ -150,9 +150,10 @@ foreach ($file in $templateParametersFile) {
                 Write-Host "Scope ==> Resource Group Level Deployment" 
                 
                 if ($subscriptionId -and $resourceGroupName) {
-                    Write-Host "`n Attempting Deployment using Input from Pipeline `n" 
-                    Set-AzContext -SubscriptionId $subscriptionId | out-null
-                    New-AzResourceGroupDeployment @CommonDeployParameters -ResourceGroupName $resourceGroupName
+                    Write-Host "`n Attempting Deployment using Input from Pipeline, working here `n" 
+                    
+                    #Set-AzContext -SubscriptionId $subscriptionId | out-null
+                    #New-AzResourceGroupDeployment @CommonDeployParameters -ResourceGroupName $resourceGroupName
                 }
                 elseif (-not ($subscriptionId -and $resourceGroupName)) {
                     Write-Host "`n Attempting Deployment using Input from Parameter File `n" 
