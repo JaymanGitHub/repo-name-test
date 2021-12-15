@@ -37,14 +37,7 @@ jobs:
     environment: Dev
     
     # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      - name: Azure Login
-        uses: Azure/login@v1
-        with:
-          # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
-          creds: ${{ secrets.AZURE_SP }}
-          allow-no-subscriptions: true
-          enable-AzPSSession: true
+    steps:      
           
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
@@ -64,11 +57,8 @@ jobs:
   Test:
     needs: build
     if: ${{ success() && github.REF_NAME == 'main' }}
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     environment: Dev
-    env:
-      path: './Modules/test.ps1'
-      para: 'haha'
     steps:
       - name: Download a Build Artifact
         uses: actions/download-artifact@v2.0.10
