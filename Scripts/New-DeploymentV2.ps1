@@ -106,9 +106,9 @@ foreach ($file in $templateParametersFile) {
                 }
                 
                 if ($subscriptionId) {
-                    Write-Host "`n Attempting Deployment using Input from Pipeline `n" 
-                    Set-AzContext -SubscriptionId $subscriptionId | out-null
-                    New-AzDeployment @CommonDeployParameters -Location $location  
+                    Write-Host "`n Attempting Deployment using Input from Pipeline!!!!!!!!!!!!!!!!!!!!!!!!!!! `n" 
+                    #Set-AzContext -SubscriptionId $subscriptionId | out-null
+                    #New-AzDeployment @CommonDeployParameters -Location $location  
                 }
                 elseif ($subscriptionId_File) {
                     Write-Host "`n Attempting Deployment using Input from Parameter File`n" 
