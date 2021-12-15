@@ -47,7 +47,7 @@ jobs:
         with:
           # Specify the Az PowerShell script here.
           inlineScript: |
-            ./Scripts/New-DeploymentV2.ps1 -templateFile './Modules/Network/nsg.deploy.json' -templateParametersFile @("./Configuration/platform/nprd-prv/nsg/nsg1.parameters.json") -resourceGroupName 'jay-test-rg' -subscriptionId '${{ secrets.AZURE_SUBID }}' -buildInfo 'sha main'
+            ./Scripts/New-DeploymentV2.ps1 -templateFile './Modules/Network/nsg.deploy.json' -templateParametersFile @("./Configuration/platform/nprd-prv/nsg/nsg1.parameters.json") -resourceGroupName 'jay-test-rg' -subscriptionId '${{ secrets.AZURE_SUBID }}' -buildInfo '${{ github.SHA }} ${{ github.REF_NAME }}'
           azPSVersion: latest
           
       - name: Upload a Build Artifact
