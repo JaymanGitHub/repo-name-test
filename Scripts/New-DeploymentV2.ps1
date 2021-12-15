@@ -152,8 +152,8 @@ foreach ($file in $templateParametersFile) {
                 if ($subscriptionId -and $resourceGroupName) {
                     Write-Host "`n Attempting Deployment using Input from Pipeline, working here `n" 
                     
-                    #Set-AzContext -SubscriptionId $subscriptionId | out-null
-                    #New-AzResourceGroupDeployment @CommonDeployParameters -ResourceGroupName $resourceGroupName
+                    Set-AzContext -SubscriptionId $subscriptionId | out-null
+                    New-AzResourceGroupDeployment @CommonDeployParameters -ResourceGroupName $resourceGroupName
                 }
                 elseif (-not ($subscriptionId -and $resourceGroupName)) {
                     Write-Host "`n Attempting Deployment using Input from Parameter File `n" 
