@@ -38,18 +38,6 @@ jobs:
     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Deploy nsgs
-        uses: Azure/powershell@v1
-        with:
-          # Specify the Az PowerShell script here.
-          inlineScript: |
-            $a = "a,b,c,d, `
-              e,f"
-              
-            $b = $a.split(",")
-            write-output $b.count
-          azPSVersion: latest
-          
           
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
