@@ -36,7 +36,7 @@ jobs:
     runs-on: windows-latest
     environment: Dev
     env:
-      testenv: 'test ${{ github.event.inputs.choice1 }}'
+      testenv: 'test ${{ github.event.inputs.choice1 }} ${{ secrets.DEV_NAME }}'
     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
