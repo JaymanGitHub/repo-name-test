@@ -48,6 +48,7 @@ jobs:
               
             $b = $a.split(",")
             write-output $b.count
+          azPSVersion: latest
           
           
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
