@@ -68,7 +68,7 @@ jobs:
         with:
           # Specify the Az PowerShell script here.
           inlineScript: |
-            $a = "1,2,3, `
+            $a = "1,2,3,`
               4,5"
             $b = $a.split(",")
             write-output $b.count
