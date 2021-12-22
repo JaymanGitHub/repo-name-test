@@ -55,14 +55,12 @@ jobs:
     if: ${{ success() && github.REF_NAME == 'main' }}
     runs-on: windows-latest
     environment: Dev
-    env:
-      TES2: 'bla${{env.TES1}}'
+ 
     steps:
       - name: Run a one-line script
         run: |
           echo hello
           echo ${{env.TES}}
-          echo ${{env.TES2}}
           
   Test2:
     needs: build
