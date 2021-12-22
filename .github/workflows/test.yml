@@ -59,3 +59,12 @@ jobs:
         run: |
           echo hello
           
+  Test2:
+    needs: build
+    if: ${{ success() && github.REF_NAME == 'main' }}
+    runs-on: windows-latest
+    environment: Dev
+    steps:
+      - name: Run a one-line script
+        run: |
+          echo hello
