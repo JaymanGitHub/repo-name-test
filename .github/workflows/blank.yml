@@ -33,7 +33,7 @@ jobs:
   Bla:
     uses: JaymanGitHub/playground-public/.github/workflows/resuable.yml@main
     with:
-      publish_artifacts: 'yes'
+      publishArtifacts : 'yes'
       
   # This workflow contains a single job called "build"
   build:
