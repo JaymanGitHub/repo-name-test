@@ -23,4 +23,4 @@ jobs:
         if: ${{ inputs.publishArtifacts && inputs.publishArtifacts == 'yes' }}
         run: |
           echo hahahaha
-          echo ${{ github.event.inputs.publish_artifacts }}
+          echo ${{ github.event.inputs.publishArtifacts }}
