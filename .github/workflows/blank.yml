@@ -23,6 +23,9 @@ on:
         options:
           - he
           - ha
+      stringinput:
+        type: string
+        description: Make string input
      
 env:
   agentWin: windows-latest
