@@ -25,7 +25,7 @@ on:
           - ha
       stringinput:
         type: string
-        description: Make a selection (ASG, NSG, PrivateEndpoint, ResourceGroup, RouteTable, Network, Management, Security, Identity, VM, All)
+        description: Input Deployment Type (ASG, NSG, PrivateEndpoint, ResourceGroup, RouteTable, Network, Management, Security, Identity, VM, All)
      
 env:
   agentWin: windows-latest
