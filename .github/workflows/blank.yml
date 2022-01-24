@@ -25,18 +25,7 @@ on:
           - ha
       stringinput:
         type: string
-        description: Make a selection
-          - applicationSecurityGroups
-          - networkSecurityGroups
-          - privateEndpoints
-          - resourceGroups
-          - routeTables
-          - networkCore
-          - management
-          - security
-          - identity
-          - vms
-          - all
+        description: Make a selection (ASG, NSG, PrivateEndpoint, ResourceGroup, RouteTable, Network, Management, Security, Identity, VM, All)
      
 env:
   agentWin: windows-latest
