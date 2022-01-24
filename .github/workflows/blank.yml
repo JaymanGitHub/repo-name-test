@@ -25,7 +25,18 @@ on:
           - ha
       stringinput:
         type: string
-        description: Make string input
+        description: Make a selection
+          - applicationSecurityGroups
+          - networkSecurityGroups
+          - privateEndpoints
+          - resourceGroups
+          - routeTables
+          - networkCore
+          - management
+          - security
+          - identity
+          - vms
+          - all
      
 env:
   agentWin: windows-latest
