@@ -65,7 +65,8 @@ jobs:
 
       - name: cmd
         run: |
-            $a = "1,2,3,`
+            $a = "1,2,\
+             3,\
               4,5"
             $b = $a.split(",")
             write-output $b.count
