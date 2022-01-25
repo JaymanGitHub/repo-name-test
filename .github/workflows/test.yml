@@ -64,6 +64,7 @@ jobs:
           
 
       - name: cmd
+        shell: pwsh
         run: |
             $a = "1,2,\
              3,\
