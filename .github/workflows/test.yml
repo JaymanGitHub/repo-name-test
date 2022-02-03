@@ -40,7 +40,7 @@ jobs:
 
       - name: Transform NUnit3 to JUnit
         run: |
-          Get-ChildItem . -Filter **/Test-*.xml | Foreach-Object {
+          Get-ChildItem . -Filter TEST-*.xml | Foreach-Object {
             $xml = Resolve-Path $_.FullName
             $output = Join-Path ($pwd) ($_.BaseName + '_junit.xml')
             $xslt = New-Object System.Xml.Xsl.XslCompiledTransform;
