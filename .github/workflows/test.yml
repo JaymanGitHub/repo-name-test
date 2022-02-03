@@ -25,10 +25,6 @@ on:
           - he
           - ha
      
-env:
-  agentWin: windows-latest
-  TES: 'bla/${{ secrets.DEV_NAME}}'
-  TES1: 'bla'
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
       
@@ -36,42 +32,15 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: windows-latest
-    environment: Dev
-    env:
-      testenv: 'test ${{ github.event.inputs.choice1 }} ${{ secrets.DEV_NAME }}'
-    
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        if: ${{ github.event.inputs.deploymentType == 'hahaha' }}
-        run: |
-          echo ${{ github.event.inputs.deploymentType }}
-          echo ${{ github.event.inputs.choice1 }}
-          echo ${{ env.testenv }}
-          
-  Test:
-    needs: build
-    if: ${{ success() && github.REF_NAME == 'main' }}
-    runs-on: windows-latest
-    environment: Dev
- 
-    steps:
-      - name: Run a one-line script
-        run: |
-          echo hello
-          echo ${{env.TES}}
+      - uses: dorny/test-reporter@v1
+        with:
+          artifact: test-results            # artifact name
+          name: JEST Tests                  # Name of the check run which will be created
+          path: '*.xml'                     # Path to test results (inside artifact .zip)
+          reporter: jest-junit
           
 
-      - name: cmd
-        shell: pwsh
-        run: |
-            $a = "1,2, `
-             3, `
-              4,5"
-            $b = $a.split(",")
-            write-output $b.count
-            foreach($bb in $b){write-output $bb}
             
 
 
