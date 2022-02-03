@@ -47,7 +47,12 @@ jobs:
             $xslt.Load("nunit3-junit.xslt");
             $xslt.Transform($xml, $output);
           }
- 
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          name: testArtifacts
+          path: ./TEST-*.xml
+          
       - uses: dorny/test-reporter@v1.4.2
         with:
           name: JEST Tests                  # Name of the check run which will be created
