@@ -34,11 +34,25 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Install NUnit
+        run: |
+          nuget install NUnit.Console -Version 3.12.0
+
+      - name: Transform NUnit3 to JUnit
+        run: |
+          Get-ChildItem . -Filter **/Test-*.xml | Foreach-Object {
+            $xml = Resolve-Path $_.FullName
+            $output = Join-Path ($pwd) ($_.BaseName + '_junit.xml')
+            $xslt = New-Object System.Xml.Xsl.XslCompiledTransform;
+            $xslt.Load("nunit3-junit.xslt");
+            $xslt.Transform($xml, $output);
+          }
+ 
       - uses: dorny/test-reporter@v1
         with:
           name: JEST Tests                  # Name of the check run which will be created
-          path: '*.xml'                     # Path to test results (inside artifact .zip)
-          reporter: dotnet-trx
+          path: '*_junit.xml'                     # Path to test results (inside artifact .zip)
+          reporter: jest-junit
           
 
             
