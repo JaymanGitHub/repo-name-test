@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="nunit_schema_2.5.xsd" name="Pester" total="35" errors="0" failures="0" not-run="165" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2022-02-03" time="10:15:53">
+  <environment platform="Microsoft Windows Server 2019 Datacenter|C:\windows|\Device\Harddisk0\Partition3" os-version="10.0.17763" user="SRV_GHERUNNERS" machine-name="PPWAZGHERNR01" nunit-version="2.5.8.0" clr-version="Unknown" user-domain="NSWPS" cwd="E:\actions-runner\_work\Azure-Cloud-Foundations-CICD\Azure-Cloud-Foundations-CICD" />
+  <culture-info current-culture="en-AU" current-uiculture="en-US" />
+  <test-suite type="TestFixture" name="Pester" executed="True" result="Success" success="True" time="2.6345" asserts="0" description="Pester">
+    <results>
+      <test-suite type="TestFixture" name="E:\actions-runner\_work\Azure-Cloud-Foundations-CICD\Azure-Cloud-Foundations-CICD\Scripts\Pester\ConfigFileTests\pipelineConfigurationFile.Tests.ps1" executed="True" result="Success" success="True" time="2.6345" asserts="0" description="E:\actions-runner\_work\Azure-Cloud-Foundations-CICD\Azure-Cloud-Foundations-CICD\Scripts\Pester\ConfigFileTests\pipelineConfigurationFile.Tests.ps1">
+        <results>
+          <test-suite type="TestFixture" name="[Microsoft.Resources-resourceGroups] File path tests" executed="True" result="Success" success="True" time="0.5055" asserts="0" description="[Microsoft.Resources-resourceGroups] File path tests">
+            <results>
+              <test-suite type="TestFixture" name="[Microsoft.Resources-resourceGroups] File path tests.[Module]" executed="True" result="Success" success="True" time="0.3608" asserts="0" description="[Microsoft.Resources-resourceGroups] File path tests.[Module]">
+                <results>
+                  <test-case description=" Deployment Template File ()" name="[Microsoft.Resources-resourceGroups] File path tests.[Module]. Deployment Template File ()" time="0.2832" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations]" executed="True" result="Success" success="True" time="0.4418" asserts="0" description="[Microsoft.Resources-resourceGroups] File path tests.[Configurations]">
+                <results>
+                  <test-suite type="ParameterizedTest" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (&lt;fileName&gt;)" executed="True" result="Success" success="True" time="0.0735" asserts="0" description="Configuration Files (&lt;fileName&gt;)">
+                    <results>
+                      <test-case description="Configuration Files (platform-conn-rg-auea-nprd-ppd.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (platform-conn-rg-auea-nprd-ppd.parameters.json)" time="0.0125" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (platform-iden-rg-auea-nprd-ppd.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (platform-iden-rg-auea-nprd-ppd.parameters.json)" time="0.0066" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (platform-mgmt-rg-auea-nprd-ppd.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (platform-mgmt-rg-auea-nprd-ppd.parameters.json)" time="0.0067" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (platform-conn-rg-auea-pr-prd.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (platform-conn-rg-auea-pr-prd.parameters.json)" time="0.0362" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (platform-iden-rg-auea-pr-prd.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (platform-iden-rg-auea-pr-prd.parameters.json)" time="0.0056" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (platform-mgmt-rg-auea-pr-prd.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (platform-mgmt-rg-auea-pr-prd.parameters.json)" time="0.0058" asserts="0" success="True" result="Success" executed="True" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="[Microsoft.Resources-resourceGroups] File path tests.[ConfigsCountMatching]" executed="True" result="Success" success="True" time="0.4782" asserts="0" description="[Microsoft.Resources-resourceGroups] File path tests.[ConfigsCountMatching]">
+                <results>
+                  <test-case description="Matchig NonProd Configs to Prod Configs" name="[Microsoft.Resources-resourceGroups] File path tests.[ConfigsCountMatching].Matchig NonProd Configs to Prod Configs" time="0.0286" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="[Microsoft.Resources-resourceGroups] File path tests" executed="True" result="Success" success="True" time="0.8858" asserts="0" description="[Microsoft.Resources-resourceGroups] File path tests">
+            <results>
+              <test-suite type="TestFixture" name="[Microsoft.Resources-resourceGroups] File path tests.[Module]" executed="True" result="Success" success="True" time="0.0184" asserts="0" description="[Microsoft.Resources-resourceGroups] File path tests.[Module]">
+                <results>
+                  <test-case description=" Deployment Template File ()" name="[Microsoft.Resources-resourceGroups] File path tests.[Module]. Deployment Template File ()" time="0.0114" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations]" executed="True" result="Success" success="True" time="0.3488" asserts="0" description="[Microsoft.Resources-resourceGroups] File path tests.[Configurations]">
+                <results>
+                  <test-suite type="ParameterizedTest" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (&lt;fileName&gt;)" executed="True" result="Success" success="True" time="0.3197" asserts="0" description="Configuration Files (&lt;fileName&gt;)">
+                    <results>
+                      <test-case description="Configuration Files (NetworkWatcherRG.locks.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (NetworkWatcherRG.locks.parameters.json)" time="0.0082" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (rg-auea-nprd-ppd-dnsfwd-01.locks.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (rg-auea-nprd-ppd-dnsfwd-01.locks.parameters.json)" time="0.0061" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (rg-auea-nprd-ppd-exthub-01.locks.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (rg-auea-nprd-ppd-exthub-01.locks.parameters.json)" time="0.0063" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (rg-auea-nprd-ppd-inthub-01.locks.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (rg-auea-nprd-ppd-inthub-01.locks.parameters.json)" time="0.0105" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (rg-auea-nprd-ppd-ipgroups-01.locks.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (rg-auea-nprd-ppd-ipgroups-01.locks.parameters.json)" time="0.0059" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (rg-auea-nprd-ppd-paasdns-01.locks.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (rg-auea-nprd-ppd-paasdns-01.locks.parameters.json)" time="0.0059" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (rg-auea-nprd-ppd-platform-01.locks.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (rg-auea-nprd-ppd-platform-01.locks.parameters.json)" time="0.0061" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (rg-auea-nprd-ppd-platformlogs-01.locks.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (rg-auea-nprd-ppd-platformlogs-01.locks.parameters.json)" time="0.0109" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (rg-auea-nprd-ppd-plsspoke-01.locks.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (rg-auea-nprd-ppd-plsspoke-01.locks.parameters.json)" time="0.0064" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (rg-auea-nprd-ppd-seclogs-01.locks.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (rg-auea-nprd-ppd-seclogs-01.locks.parameters.json)" time="0.0072" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (rg-auea-nprd-ppd-splunkintegration-01.locks.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (rg-auea-nprd-ppd-splunkintegration-01.locks.parameters.json)" time="0.007" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (rg-auea-nprd-ppd-vmimages-01.locks.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (rg-auea-nprd-ppd-vmimages-01.locks.parameters.json)" time="0.0452" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (rg-auea-nprd-ppd-workbooks-01.locks.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (rg-auea-nprd-ppd-workbooks-01.locks.parameters.json)" time="0.0069" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (rg-auea-pr-prd-dnsfwd-01.locks.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (rg-auea-pr-prd-dnsfwd-01.locks.parameters.json)" time="0.0083" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (rg-auea-pr-prd-exthub-01.locks.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (rg-auea-pr-prd-exthub-01.locks.parameters.json)" time="0.006" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (rg-auea-pr-prd-inthub-01.locks.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (rg-auea-pr-prd-inthub-01.locks.parameters.json)" time="0.0061" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (rg-auea-pr-prd-ipgroups-01.locks.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (rg-auea-pr-prd-ipgroups-01.locks.parameters.json)" time="0.0062" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (rg-auea-pr-prd-paasdns-01.locks.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (rg-auea-pr-prd-paasdns-01.locks.parameters.json)" time="0.0081" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (rg-auea-pr-prd-platform-01.locks.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (rg-auea-pr-prd-platform-01.locks.parameters.json)" time="0.005" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (rg-auea-pr-prd-platformlogs-01.locks.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (rg-auea-pr-prd-platformlogs-01.locks.parameters.json)" time="0.0051" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (rg-auea-pr-prd-plsspoke-01.locks.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (rg-auea-pr-prd-plsspoke-01.locks.parameters.json)" time="0.0051" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (rg-auea-pr-prd-seclogs-01.locks.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (rg-auea-pr-prd-seclogs-01.locks.parameters.json)" time="0.0078" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (rg-auea-pr-prd-splunkintegration-01.locks.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (rg-auea-pr-prd-splunkintegration-01.locks.parameters.json)" time="0.0061" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (rg-auea-pr-prd-vmimages-01.locks.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (rg-auea-pr-prd-vmimages-01.locks.parameters.json)" time="0.1163" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Configuration Files (rg-auea-pr-prd-workbooks-01.locks.parameters.json)" name="[Microsoft.Resources-resourceGroups] File path tests.[Configurations].Configuration Files (rg-auea-pr-prd-workbooks-01.locks.parameters.json)" time="0.007" asserts="0" success="True" result="Success" executed="True" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="[Microsoft.Resources-resourceGroups] File path tests.[ConfigsCountMatching]" executed="True" result="Success" success="True" time="0.3735" asserts="0" description="[Microsoft.Resources-resourceGroups] File path tests.[ConfigsCountMatching]">
+                <results>
+                  <test-case description="Matchig NonProd Configs to Prod Configs" name="[Microsoft.Resources-resourceGroups] File path tests.[ConfigsCountMatching].Matchig NonProd Configs to Prod Configs" time="0.0176" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
