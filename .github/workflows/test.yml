@@ -38,7 +38,7 @@ jobs:
         with:
           name: JEST Tests                  # Name of the check run which will be created
           path: '*.xml'                     # Path to test results (inside artifact .zip)
-          reporter: jest-junit
+          reporter: dotnet-trx
           
 
             
