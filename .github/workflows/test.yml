@@ -31,9 +31,9 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
-      - run: wriote-output ${{github.ref_name}}
+      - run: write-output ${{github.ref_name}}
 
             
 
