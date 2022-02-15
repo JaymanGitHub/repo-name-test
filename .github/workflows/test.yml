@@ -33,7 +33,7 @@ jobs:
     # The type of runner that the job will run on
     runs-on: windows-latest
     steps:
-      - run: write-output ${{github.ref_name}}
+      - run: write-output ${{github.ref}}
 
             
 
