@@ -22,9 +22,12 @@ on:
         type: choice
         description: Make another choice
         options:
-          - he
-          - ha
-     
+          - TEST
+          - TEST2
+    
+    
+env:
+  testInput: "secrets.${{github.event.inputs.choice1}}"
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
       
@@ -34,7 +37,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - run:   |
-          write-host "test"
+          write-host env.testInput
           write-host "test1"
 
             
