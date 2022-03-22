@@ -22,7 +22,7 @@ on:
         type: choice
         description: Make another choice
         options:
-          - TEST
+          - MY_TEST
           - TEST2
     
     
@@ -38,7 +38,7 @@ jobs:
     steps:
       - run:   |
           write-host ${{env.testInput}}
-          write-host "test1"
+          write-host ${{secrets.MY_TEST}}
 
             
 
