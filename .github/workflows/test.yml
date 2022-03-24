@@ -24,10 +24,13 @@ on:
         options:
           - MY_TEST
           - TEST2
+      stringInput:
+        description: input value
     
     
 env:
   testInput: "secrets.${{github.event.inputs.choice1}}"
+  envtestInput: "ipos-${{github.event.inputs.stringInput}}"
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
       
@@ -39,6 +42,7 @@ jobs:
       - run:   |
           write-host ${{env.testInput}}
           write-host ${{secrets.MY_TEST}}
+          write-host ${{env.envtestInput}}
 
             
 
