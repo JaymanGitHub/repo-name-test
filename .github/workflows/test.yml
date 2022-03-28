@@ -14,9 +14,32 @@ on:
         description: True or False
       deploymentType:
         type: choice
-        description: Make a choice
+        description : Input DeploymentType
         options:
-          - nsg
+          - applicationSecurityGroups
+          - networkSecurityGroups
+          - privateEndpoints
+          - resourceGroups
+          - routeTables
+          - networkCore
+          - management
+          - security
+          - identity
+          - loadBalancers
+          - vms
+          - all
+      
+      VmDeploymentType:
+        type: choice
+        description: Input VmDeploymentType (all, ghe, sync, backup, replica, runners, minio, none)
+        options :
+          - none
+          - ghe
+          - sync
+          - backup
+          - replica
+          - runners
+          - minio
           - all
       choice1:
         type: choice
