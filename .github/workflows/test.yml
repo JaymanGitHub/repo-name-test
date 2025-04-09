@@ -28,32 +28,10 @@ on:
           - loadBalancers
           - vms
           - all
-      
-      VmDeploymentType:
-        type: choice
-        description: Input VmDeploymentType (all, ghe, sync, backup, replica, runners, minio, none)
-        options :
-          - none
-          - ghe
-          - sync
-          - backup
-          - replica
-          - runners
-          - minio
-          - all
-      choice1:
-        type: choice
-        description: Make another choice
-        options:
-          - MY_TEST
-          - TEST2
       stringInput:
         description: input value
     
     
-env:
-  testInput: "secrets.${{github.event.inputs.choice1}}"
-  envtestInput: "ipos-${{github.event.inputs.stringInput}}"
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
       
@@ -61,17 +39,67 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: windows-latest
-    variables:
-    - name: Jaytest
-      value: ${{if eq('a','a')}}
+    env:
+      test1: ${{ inputs.boolean}}
+      test2: ${{ inputs.deploymentType}}
     steps:
-      - run:   |
-          write-host ${{ $Jaytest }}
-          write-host ${{env.testInput}}
-          write-host ${{secrets.MY_TEST}}
-          write-host ${{env.envtestInput}}
+      - name: list out envs
+        run:   |
+          write-host ${{ $test1 }}
+          write-host ${{test2}
+          write-host ${{env.DAY_OF_WEEK}}
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: show github workspace files 
+        run: |
+          ls ${{$github_workspace}} 
+      - name: Upload artifact 1
+        uses: actions/upload-artifact@v4
+        with:
+          name: infrastructure1
+          path: './'
+          include-hidden-files: true 
+      - name: Copy Files for Artifact Upload
+        run: rsync -av --exclude='build' --exclude={'src/'} ./. ./build
+        working-directory: './'
+      - name: Upload artifact 2
+        uses: actions/upload-artifact@v4
+        with:
+          name: infrastructure2
+          path: './'
+          include-hidden-files: true   
+      - name: show github workspace files 
+        run: |
+          ls ${{$github_workspace}} 
+      - name: show current path files 
+        run: |
+          ls
 
-            
+      - name: Download Artifact 1
+        uses: actions/download-artifact@v4
+        with:
+          name: infrastructure1
+      - name: show current path files 
+        run: |
+          ls
+      - name: Download Artifact 1
+        uses: actions/download-artifact@v4
+        with:
+          name: infrastructure2
+      - name: show current path files 
+        run: |
+          ls
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: show github workspace files 
+        run: |
+          ls ${{$github_workspace}} 
+      - name: show current path files 
+        run: |
+          ls
+                      
 
 
           
