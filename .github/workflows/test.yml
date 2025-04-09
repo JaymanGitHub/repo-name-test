@@ -45,9 +45,9 @@ jobs:
     steps:
       - name: list out envs
         run:   |
-          write-host ${{ env.test1 }}
-          write-host ${{ env.test2 }
-          write-host ${{ env.DAY_OF_WEEK }}
+          write-host $test1 
+          write-host $env.test2
+          write-host $env.DAY_OF_WEEK
       - name: Check out repository
         uses: actions/checkout@v4
         with:
