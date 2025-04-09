@@ -84,6 +84,9 @@ jobs:
       - name: show current path files 
         run: |
           ls
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
       - name: Download Artifact 2
         uses: actions/download-artifact@v4
         with:
