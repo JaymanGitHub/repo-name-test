@@ -38,16 +38,16 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: windows-latest
+    runs-on: linux-latest
     env:
       test1: ${{ inputs.boolean}}
       test2: ${{ inputs.deploymentType}}
     steps:
       - name: list out envs
         run:   |
-          write-host $test1 
-          write-host $env.test2
-          write-host $env.DAY_OF_WEEK
+          echo $test1 
+          echo $env.test2
+          echo $env.DAY_OF_WEEK
       - name: Check out repository
         uses: actions/checkout@v4
         with:
