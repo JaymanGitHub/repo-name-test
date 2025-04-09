@@ -46,15 +46,15 @@ jobs:
       - name: list out envs
         run:   |
           write-host ${{ env.test1 }}
-          write-host ${{env.test2}
-          write-host ${{env.DAY_OF_WEEK}}
+          write-host ${{ env.test2 }
+          write-host ${{ env.DAY_OF_WEEK }}
       - name: Check out repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: show github workspace files 
         run: |
-          ls ${{github_workspace}} 
+          ls ${{ GITHUB_WORKSPACE }} 
       - name: Upload artifact 1
         uses: actions/upload-artifact@v4
         with:
@@ -72,7 +72,7 @@ jobs:
           include-hidden-files: true   
       - name: show github workspace files 
         run: |
-          ls ${{github_workspace}} 
+          ls ${{ GITHUB_WORKSPACE }}  
       - name: show current path files 
         run: |
           ls
@@ -95,7 +95,7 @@ jobs:
         uses: actions/checkout@v4
       - name: show github workspace files 
         run: |
-          ls ${{github_workspace}} 
+          ls ${{ GITHUB_WORKSPACE }} 
       - name: show current path files 
         run: |
           ls
