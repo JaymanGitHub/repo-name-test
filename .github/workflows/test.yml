@@ -84,7 +84,7 @@ jobs:
       - name: show current path files 
         run: |
           ls
-      - name: Download Artifact 1
+      - name: Download Artifact 2
         uses: actions/download-artifact@v4
         with:
           name: infrastructure2
