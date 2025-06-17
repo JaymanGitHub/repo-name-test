@@ -9,9 +9,11 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
-      boolean:
+      DenifinitionOnly:
+        description: 'A username passed from the caller workflow'
+        default: false
+        required: false
         type: boolean
-        description: True or False
       deploymentType:
         type: choice
         description : Input DeploymentType
